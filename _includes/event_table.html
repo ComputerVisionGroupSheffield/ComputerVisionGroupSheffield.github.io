@@ -1,0 +1,62 @@
+<div style="margin: 30px">
+    <table style="width:100%;" id="example-1">
+        <tr>
+            <th>创建日期</th>
+            <th>项目名称</th>
+            <th>姓名</th>
+            <th>开始时间</th>
+            <th>结束时间</th>
+            <th>任务描述</th>
+            <th>完成情况</th>
+        </tr>
+        <tr v-for="item in items">
+            <td v-html="item.data"></td>
+            <td v-html="item.project"></td>
+            <td v-html="item.name"></td>
+            <td v-html="item.start_time"></td>
+            <td v-html="item.end_time"></td>
+            <td v-html="item.description"></td>
+            <td v-html="item.complete_state"></td>
+
+        </tr>
+    </table>
+</div>
+
+<script>
+    var example1 = new Vue({
+        el: '#example-1',
+        data: {
+            items: [
+                {
+                    data: '2020/02/25',
+                    project:'project1',
+                    name:'Kevin',
+                    start_time:'13:00',
+                    end_time:'14:00',
+                    description:'Hello CV',
+                    complete_state:'TODO'
+
+                },{
+                    data: '2020/02/25',
+                    project:'project2',
+                    name:'Kevin',
+                    start_time:'13:00',
+                    end_time:'14:00',
+                    description:'Hello Wali',
+                    complete_state:'DONE'
+
+                },{
+                    data: '2020/02/25',
+                    project:'project3',
+                    name:'Kevin',
+                    start_time:'13:00',
+                    end_time:'14:00',
+                    description:'Now or never',
+                    complete_state:'DOING'
+                },
+            ]
+        }
+    })
+
+
+</script>

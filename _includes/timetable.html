@@ -1,0 +1,45 @@
+<!--课程表-->
+<script src="./js/timetable.js"></script>
+<div id="coursesTable"></div>
+<script>
+    var courseList = [
+        ['大学英语(Ⅳ)@10203\n hahaha', '大学英语(Ⅳ)@10203\n hahaha', '', '', '', '', '毛概@14208', '毛概@14208', '', '', '', '选修'],
+        ['', '', '信号与系统@11302', '信号与系统@11302', '模拟电子技术基础@16204', '模拟电子技术基础@16204', '', '', '', '', '', ''],
+        ['大学体育(Ⅳ)', '大学体育(Ⅳ)', '形势与政策(Ⅳ)@15208', '形势与政策(Ⅳ)@15208', '', '', '电路、信号与系统实验', '电路、信号与系统实验', '', '', '', ''],
+        ['', '', '', '', '电装实习@11301', '电装实习@11301', '', '', '', '大学体育', '大学体育', ''],
+        ['', '', '数据结构与算法分析', '数据结构与算法分析', '', '', '', '', '信号与系统', '信号与系统', '', ''],
+    ];
+    var week = window.innerWidth > 360 ? ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday','Sunday'] :
+        ['一', '二', '三', '四', '五'];
+    var day = new Date().getDay();
+    var courseType = [
+        [{index: '', name: '8:00'}, 1],
+        [{index: '', name: '9:00'}, 1],
+        [{index: '', name: '10:00'}, 1],
+        [{index: '', name: '11:00'}, 1],
+        [{index: '', name: '12:00'}, 1],
+        [{index: '', name: '14:00'}, 1],
+        [{index: '', name: '15:00'}, 1],
+        [{index: '', name: '16:00'}, 1],
+        [{index: '', name: '17:00'}, 1],
+        [{index: '', name: '18:00'}, 1],
+        [{index: '', name: '19:00'}, 1],
+        [{index: '', name: '20:00'}, 1]
+    ];
+    // 实例化(初始化课表)
+    var Timetable = new Timetables({
+        el: '#coursesTable',
+        timetables: courseList,
+        week: week,
+        timetableType: courseType,
+        highlightWeek: day,
+        gridOnClick: function (e) {
+            alert(e.name + '  ' + e.week + ', 第' + e.index + '节课, 课长' + e.length + '节');
+            console.log(e);
+        },
+        styles: {
+            Gheight: 50
+        }
+    });
+
+</script>
